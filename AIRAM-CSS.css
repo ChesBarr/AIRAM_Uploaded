@@ -10,7 +10,7 @@ html, body {
 body {
 	height: 100%;
 	
-    background-image: url('images/bgimageairam.jpg');
+    background-image: url("images/bgimageAiram.jpg");
 	background-attachment: fixed;
     background-size: cover;
     background-position: center;
