@@ -1,0 +1,445 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+html, body {
+	scroll-behavior: smooth;
+}
+body {
+	height: 100%;
+	
+    background-image: url('images/bgimageairam.jpg');
+	background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+	margin: auto;
+	padding: auto;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*** Official Logo Picture ***/
+
+#logoImg {
+	margin: 5%;
+	border-radius: 50%;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+	
+	transition: .3s;
+}
+#logoImg:hover {
+	margin: 3% 5% 7% 1%;
+	transform: scale(1.1);
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+	z-index: 100;
+}
+
+
+/*** Navigation Bar ***/
+
+.menuBar {
+	position: sticky;
+	top: 0;
+	
+	background-color: #fcdd99;
+	height: 80px;
+	width: 100%;
+	border-bottom: 3px solid #aaa;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 5%;
+	
+	z-index: 5;
+}
+.menuBar h1 a {
+	text-decoration: none;
+	font-family: Brush Script MT;
+}
+.menuBar ul {
+	list-style: none;
+	display: flex;
+}
+.menuBar ul li {
+	padding: 10px 30px;
+}
+.menuBar ul li a {
+	color: #4aa;
+	text-decoration: none;
+	font-size: 2rem;
+	font-family: Lucida Handwriting;
+	
+	transition: all 0.3s;
+}
+.menuBar ul li a:hover {	
+	font-size: 2.3rem;	
+	color: #cc00ff;
+}
+.brandName {
+	font-family: Brush Script MT;
+	font-size: 7rem;
+	font-weight: 700;
+	color: #b91082;
+	
+	transition: all .5s;
+}
+.brandName:hover, .brandName:focus {
+	font-size: 9rem;
+	transform: translateY(+25px);	
+	color: #ff4bff;
+}
+
+/*** AIRAM-Our-Products.html ***/
+
+.content, #productMenu, #resTitle {
+	margin: 20px 40px;
+	border: 2px solid #559;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, .2);
+}
+#productMenu {
+	padding: 2px 10px;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex;
+}
+#resTitle {
+	font-size: 4rem;
+	font-family: Brush Script MT;
+	text-align: center;
+	
+	color: #e3e;
+	
+	transition: .3s;
+}
+#resTitle:hover {
+	color: #f1f;
+	background-color: transparent;
+	border: none;
+}
+
+.bubble {
+	position: relative;
+	
+	height: 450px;
+	width: 250px;
+	border: 3px solid red;
+	margin: 5px 18px;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, .3);
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+.price {
+	position: absolute;
+	left: 10px;
+	
+	font-family: Arial;
+	font-size: 1.2rem;
+	
+	z-index: 4;
+}
+.bubble img {
+	height: 245px;
+	width: 245px;
+	border-radius: 15px;
+	
+	background-color: white;
+}
+.bubble img:hover {
+	height: 300px;
+	width: 300px;
+	border-radius: 5px;
+	
+	background-color: transparent;
+	
+	transition: .1s;
+}
+.bubble h3 {
+	font-family: Lucida Handwriting;
+	color: #4f4;
+	
+	margin-top: 20px;
+}
+.bubble p {
+	text-wrap: wrap;
+	text-align: center;
+	padding: 5px;
+	color: #afa;
+}
+
+/*** Searchbar ***/
+
+#searchBar {
+	height: 40px;
+	width: 450px;
+	border-radius: 15px;
+	color: rgba(0, 0, 0, .6);
+	font-size: .9rem;
+	padding-left: 15px;
+	
+	transition: .3s;
+}
+#searchBar:focus {
+	height: 45px;
+	width: 470px;
+	font-size: 1.3rem;
+	padding-left: 17px;
+	color: rgba(250, 100, 100, .9);
+}
+header form {
+	margin-top: 1%;
+	
+	display: flex;
+}
+.searchButton {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 3.5rem;
+}
+.searchChar {
+	height: 30px;
+	width: 30px;
+}
+#circle {
+	height: 70%;
+	width: 70%;
+	border-radius: 50%;
+	border: 3px solid black;
+}
+#skewline {
+	width: 40%;
+	height: 20%;
+	background-color: #000;
+	transform: skewY(-130deg);
+	
+	position: relative;
+	left: 17px;
+	bottom: 1px;
+}
+
+
+/* Popup Window */
+
+.popUpContent {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+	padding: 20px 2%;
+    
+    background-color: #fcc;
+	border-radius: 15px;
+    border: 4px solid #faa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	
+	transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.popUpContent form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.popShadows {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.exit {
+    position: absolute;
+    top: -10px;
+    right: -4px;
+	height: 35px;
+	
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px rgba(255, 255, 255, 1);
+	border-top: 3px;
+	border-left: 3px;
+	background-color: red;
+	color: #fff;
+	font-size: 1.7rem;
+	font-weight: 1000;
+	
+    cursor: pointer;
+}
+.priceBox {
+	background-color: rgba(255, 255, 255, 1);
+	width: 60%;
+}
+.priceBox input {
+	background-color: transparent;
+	border: none;
+	width: 90%;
+}
+
+/*** AIRAM-About.html ***/
+
+.normally {
+	border: 1px solid black;
+	border-radius: 30px;
+	margin: 10px 150px;
+	padding: 10px 30px;
+	
+	color: #fff;
+	
+	display: flex;
+	justify-content: center;
+	
+	font-family: Arial, sans-serif;
+	background-color: rgba(0, 0, 0, .1);
+	
+	transition: .2s;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .2);
+}
+.fontSize{
+	font-size: 1.5rem;
+}
+
+/*** Footing ***/
+
+.footing {
+	border-top: 3px solid #aaa;
+	background-color: #fcdd99;
+	width: 100%;
+	padding: 0px 30px 0px 30px;
+	color: #4aa;
+	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	
+	font-family: Arial, sans-serif;
+	
+	z-index: 5;
+}
+.footing h3 {
+	display: flex;
+	font-size: 1.5rem;
+	
+	transition: .5s;
+}
+.footing h3:hover {
+	transform: scale(1.1);
+}
+.footing ul li {
+	list-style: circle;
+	
+	transition: 0.3s;
+}
+.footing ul li a {
+	list-style: none;
+	text-decoration: none;
+	font-size: .9rem;
+	color: #4aa;
+	
+	transition: 0.3s;
+}
+.footing ul li a:hover {
+	font-size: 1rem;
+}
+.footing a i {
+	font-size: 3rem;
+	
+	transition: .3s;
+}
+.footing a i:hover {
+	font-size: 5rem;
+}
+.fa-youtube {
+	color: #f22;
+}
+.fa-facebook {
+	color: #11f;
+}
+.fa-instagram {
+	color: #f17;
+}
+.fa-twitter {
+	color: #5af;
+}
+.fa-google-plus {
+	color: #f55;
+}
+
+
+/*** Animations ***/
+
+@keyframes topdown {
+	from {
+		transform: translateY(-15px);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+.topdown {
+	animation-name: topdown;
+	animation-timing-function: ease-in;
+}
+
+@keyframes slideInLeft {
+	from {
+		transform: translateX(-200px);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+.slideInLeft {
+	animation-name: slideInLeft;
+	animation-timing-function: ease-in;
+}
+
+@keyframes slideInRight {
+	from {
+		transform: translateX(+200px);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+.slideInRight {
+	animation-name: slideInRight;
+	animation-timing-function: ease-in;
+}
+
+@keyframes rotate {
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+.rotate{
+	animation-name: rotate;
+	animation-timing-function: linear;
+	
+	transform-origin: center;
+}
